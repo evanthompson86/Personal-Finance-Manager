@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/evanthompson/Desktop/Github-Repos/Personal-Finance-Manager",
+      "program": "/Users/evanthompson/Desktop/Github-Repos/Personal-Finance-Manager/build/Debug/outDebug"
+    }
+  ]
+}
