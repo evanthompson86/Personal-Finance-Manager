@@ -32,9 +32,11 @@ double CalculateIndividualBudget(double percent){
 
 void PrintBudget(double savings, double investings, double spendings, double miscellaneous){
     std::cout << std::fixed << std::setprecision(2);
-    std::cout << "Save: $" << savings << " Invest: $" << investings
-              << " Spending Money: $" << spendings << " Money for miscellaneous / extra: $"
-              << miscellaneous;
+    std::cout << "Pay Rent: $" << _rent << std::endl << "Gas Money: $" << GasMoney() 
+                << std::endl << "Save: $" << savings << std::endl << "Invest: $" 
+                << investings << std::endl << "Spending Money (For things you NEED or WANT): $" 
+                << spendings << std::endl << "Money for miscellaneous / extra: $"
+                << miscellaneous << std::endl;
 }
 
 void CalculateTotalBudget(){
@@ -46,10 +48,18 @@ void CalculateTotalBudget(){
         PrintBudget(savings, investings, spendings, miscellaneous);
 
     } else if (_savings_level == "regular"){
-        
+        double savings = CalculateIndividualBudget(.20);
+        double investings = CalculateIndividualBudget(.10);
+        double spendings = CalculateIndividualBudget(.60);
+        double miscellaneous = CalculateIndividualBudget(.10);
+        PrintBudget(savings, investings, spendings, miscellaneous);
 
     } else {
-        
+        double savings = CalculateIndividualBudget(.30);
+        double investings = CalculateIndividualBudget(.20);
+        double spendings = CalculateIndividualBudget(.40);
+        double miscellaneous = CalculateIndividualBudget(.10);
+        PrintBudget(savings, investings, spendings, miscellaneous);
     }
 
 }
@@ -77,7 +87,5 @@ double _income;
 double _rent;
 std::string _savings_level;
 int _gas;
-
-
 
 };
