@@ -30,15 +30,18 @@ void MakeBudget(){
     double income;
     double rent;
     int gas;
-    
-    Savings_Level();
+    std::string savings_level = Savings_Level();
+
+
     std::cout << "What is your monthly income?: ";
     std::cin >> income;
     std::cout << "What is your monthly rent?: ";
     std::cin >> rent;
     std::cout << "How many times per month do you get gas?: ";
     std::cin >> gas;
-    
+    Budget your_budget(income, rent, savings_level, gas);
+    your_budget.CalculateTotalBudget();
+
 }
 
 
