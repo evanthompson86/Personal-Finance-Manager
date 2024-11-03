@@ -21,15 +21,18 @@ double GetRent(){ return _rent; }
 std::string GetSavingsLevel(){ return _savings_level; }
 int GetGas(){ return _gas; }
 
+// multiply $50 times how many times user gets gas per month
 double GasMoney(){
     return 50 * _gas;
 }
 
+// calculate each individual budget (savings, investings, etc.)
 double CalculateIndividualBudget(double percent){
     double income_after_rent_gas = _income - (_rent + GasMoney());
     return income_after_rent_gas * percent;
 }
 
+// print the users calculated budget
 void PrintBudget(double savings, double investings, double spendings, double miscellaneous){
     std::cout << std::fixed << std::setprecision(2);
     std::cout << "Pay Rent: $" << _rent << std::endl << "Gas Money: $" << GasMoney() 
@@ -39,6 +42,7 @@ void PrintBudget(double savings, double investings, double spendings, double mis
                 << miscellaneous << std::endl;
 }
 
+// calculate total budget, for light, regular, or advanced
 void CalculateTotalBudget(){
     if (_savings_level == "light"){
         double savings = CalculateIndividualBudget(.10);
@@ -63,24 +67,6 @@ void CalculateTotalBudget(){
     }
 
 }
-
-//   Light Tier
-// Saving: 10%
-// Investing: 5%
-// Spending: 75%
-// Miscellaneous: 10%
-
-// Regular Tier
-// Saving: 20%
-// Investing: 10%
-// Spending: 60%
-// Miscellaneous: 10%
-
-// Extreme Tier
-// Saving: 30%
-// Investing: 20%
-// Spending: 40%
-// Miscellaneous: 10%
 
 private:
 double _income;
